@@ -1,0 +1,83 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$ref: "#/$defs/module"
+$defs:
+  module:
+    title: Module
+    type: object
+    properties:
+      name:
+        type: string
+      moduleId:
+        type: string
+      title:
+        type: string
+      author:
+        type: string
+      slideCount:
+        type: integer
+      width:
+        type: number
+      height:
+        type: number
+      pages:
+        type: array
+        items:
+          $ref: "#/$defs/page"
+    required:
+      - moduleId
+      - slideCount
+      - width
+      - height
+      - pages
+
+  page:
+    title: Page
+    type: object
+    properties:
+      slideId: 
+        type: string
+      components:
+        type: array
+        items:
+          anyOf:
+            - $ref: "#/$defs/textcomponent"
+            - $ref: "#/$defs/imagecomponent"
+
+  component:
+    title: Component
+    type: object
+    properties:
+      x:
+        type: number
+      y:
+        type: number
+      width:
+        type: number
+      height:
+        type: number
+      componentType:
+        enum:
+          - text
+          - image
+    required:
+      - x
+      - y
+      - width
+      - height
+      - componentType
+
+  textcomponent:
+    $ref: "#/$defs/component"
+    title: TextComponent
+    type: object
+    properties:
+      content:
+        type: string
+
+  imagecomponent:
+    $ref: "#/$defs/component"
+    title: ImageComponent
+    type: object
+    properties:
+      imageFile:
+        type: string
