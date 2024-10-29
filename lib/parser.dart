@@ -1,4 +1,4 @@
-import "ir_schema.dart";
+import "model/schema/ir_schema.dart";
 import "dart:io";
 import 'package:json_schema/json_schema.dart';
 
