@@ -1,19 +1,22 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $ref: "#/$defs/module"
 $defs:
+#
+# module is the top level object
+#
   module:
     title: Module
     type: object
     properties:
       name:
         type: string
-      moduleId:
+      moduleId:       # unique identifier
         type: string
       title:
         type: string
       author:
         type: string
-      slideCount:
+      slideCount:     # page count (do we need this?)
         type: integer
       width:
         type: number
