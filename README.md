@@ -2,7 +2,7 @@
 ## Luna IR schema prototype
 
 
-Uses [quicktype](https://quicktype.io) to create Dart data objects from a [JSON schema](json-schema.org).
+Uses [quicktype](https://quicktype.io) to create Dart data objects from a [JSON schema](https://json-schema.org).
 
 Prototype [schema](https://github.com/bruce-hey/ir_schema/blob/main/lib/model/schema/ir_schema.yaml) in lib/model/schema is converted from YAML to JSON since
 native Dart validation code requires JSON:
