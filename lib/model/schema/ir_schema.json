@@ -31,7 +31,8 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/page"
-          }
+          },
+          "minItems": 1
         }
       },
       "required": [
