@@ -4,7 +4,8 @@
 
 Uses [quicktype](https://quicktype.io) to create Dart data objects from a JSON schema.
 
-Prototype [schema](https://github.com/bruce-hey/ir_schema/blob/main/lib/model/schema/ir_schema.yaml) in lib/model/schema is converted from YAML to JSON:
+Prototype [schema](https://github.com/bruce-hey/ir_schema/blob/main/lib/model/schema/ir_schema.yaml) in lib/model/schema is converted from YAML to JSON since
+native Dart validation code requires JSON:
 
 ```
 $ yq ir_schema.yaml -o json > ir_schema.json
