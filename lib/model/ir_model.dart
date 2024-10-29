@@ -1,12 +1,4 @@
-// To parse this JSON data, do
-//
-//     final module = moduleFromJson(jsonString);
-
 import 'dart:convert';
-
-Module moduleFromJson(String str) => Module.fromJson(json.decode(str));
-
-String moduleToJson(Module data) => json.encode(data.toJson());
 
 class Module {
     final String? author;
@@ -28,6 +20,10 @@ class Module {
         this.title,
         required this.width,
     });
+
+    factory Module.fromRawJson(String str) => Module.fromJson(json.decode(str));
+
+    String toRawJson() => json.encode(toJson());
 
     factory Module.fromJson(Map<String, dynamic> json) => Module(
         author: json["author"],
@@ -61,6 +57,10 @@ class Page {
         this.slideId,
     });
 
+    factory Page.fromRawJson(String str) => Page.fromJson(json.decode(str));
+
+    String toRawJson() => json.encode(toJson());
+
     factory Page.fromJson(Map<String, dynamic> json) => Page(
         components: json["components"] == null ? [] : List<Component>.from(json["components"]!.map((x) => Component.fromJson(x))),
         slideId: json["slideId"],
@@ -90,6 +90,10 @@ class Component {
         required this.y,
         this.imageFile,
     });
+
+    factory Component.fromRawJson(String str) => Component.fromJson(json.decode(str));
+
+    String toRawJson() => json.encode(toJson());
 
     factory Component.fromJson(Map<String, dynamic> json) => Component(
         content: json["content"],

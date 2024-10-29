@@ -1,4 +1,4 @@
-import "model/schema/ir_schema.dart";
+import "model/ir_model.dart";
 import "dart:io";
 import 'package:json_schema/json_schema.dart';
 
@@ -38,5 +38,5 @@ void main() {
   print('');
   var schemaData = File('./lib/model/schema/ir_schema.json').readAsStringSync();
   var schema = JsonSchema.create(schemaData);
-  print('validate: ${schema.validate(moduleJson)}');
+  print('${schema.validate(moduleJson)}');
 }
